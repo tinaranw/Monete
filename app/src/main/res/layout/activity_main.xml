@@ -4,4 +4,114 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"/>
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="340dp"
+        android:layout_height="426dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/monetetree" />
+
+    <TextView
+        android:id="@+id/boxdisplay"
+        android:layout_width="347dp"
+        android:layout_height="157dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/box"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/boxcoin"
+        android:layout_width="347dp"
+        android:layout_height="157dp"
+        android:layout_marginTop="472dp"
+        android:background="@drawable/boxcoin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.562"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/boxicon"
+        android:layout_width="347dp"
+        android:layout_height="157dp"
+        android:layout_marginTop="472dp"
+        android:background="@drawable/boxcoin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.562"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/addboxicon"
+        android:layout_width="71dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/boxicon"
+        app:layout_constraintStart_toStartOf="@+id/boxdisplay"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+    <TextView
+        android:id="@+id/overviewboxicon"
+        android:layout_width="71dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/boxicon"
+        app:layout_constraintStart_toEndOf="@+id/addboxicon"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+    <TextView
+        android:id="@+id/rupiahstring"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/rupiahmonete"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/balancestring"
+        app:layout_constraintTop_toTopOf="@+id/boxdisplay" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="347dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="52dp"
+        android:background="#8B6B62"
+        app:layout_constraintEnd_toEndOf="@+id/boxdisplay"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/boxdisplay"
+        app:layout_constraintTop_toTopOf="@+id/boxdisplay" />
+
+    <TextView
+        android:id="@+id/balancestring"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/Nunito-Regular"
+        android:text="@string/monetebalance"
+        android:textSize="24sp"
+        app:fontFamily="@font/Nunito-Regular"
+        app:layout_constraintStart_toStartOf="@+id/boxdisplay"
+        app:layout_constraintTop_toTopOf="@+id/boxdisplay" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/currbal"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintHorizontal_bias="0.446"
+        app:layout_constraintStart_toEndOf="@+id/rupiahstring"
+        app:layout_constraintTop_toTopOf="@+id/boxdisplay" />
+</androidx.constraintlayout.widget.ConstraintLayout>
