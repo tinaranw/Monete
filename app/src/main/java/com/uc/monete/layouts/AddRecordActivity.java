@@ -21,7 +21,7 @@ public class AddRecordActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         home = findViewById(R.id.home);
-        settings = findViewById(R.id.settings);
+        settings = findViewById(R.id.settingstop);
         history = findViewById(R.id.history);
 
         home.setOnClickListener(new View.OnClickListener() {
