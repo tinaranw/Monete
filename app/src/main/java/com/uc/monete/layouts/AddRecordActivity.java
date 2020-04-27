@@ -1,4 +1,4 @@
-package com.uc.monete;
+package com.uc.monete.layouts;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,8 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.uc.monete.R;
 
-public class MainActivity extends AppCompatActivity {
+public class AddRecordActivity extends AppCompatActivity {
 
     FloatingActionButton home;
     FloatingActionButton settings;
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (MainActivity.this, MainActivity.class);
+                Intent intent = new Intent (AddRecordActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         settings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (MainActivity.this, SettingsActivity.class);
+                Intent intent = new Intent (AddRecordActivity.this, SettingsActivity.class);
                 startActivity(intent);
             }
         });
@@ -42,14 +43,9 @@ public class MainActivity extends AppCompatActivity {
         history.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (MainActivity.this, HistoryActivity.class);
+                Intent intent = new Intent (AddRecordActivity.this, HistoryActivity.class);
                 startActivity(intent);
             }
         });
-
-
-
     }
-
-
 }

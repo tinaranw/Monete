@@ -1,8 +1,10 @@
-package com.uc.monete;
+package com.uc.monete.layouts;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.uc.monete.R;
 
 public class SettingsActivity extends AppCompatActivity {
 
