@@ -250,7 +250,7 @@
         app:srcCompat="@drawable/ic_account_balance_black_24dp" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/settings"
+        android:id="@+id/settingstop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="72dp"
@@ -280,9 +280,9 @@
         android:fontFamily="@font/nunito"
         android:text="@string/settingsnavbar"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/settings"
-        app:layout_constraintStart_toStartOf="@+id/settings"
-        app:layout_constraintTop_toBottomOf="@+id/settings" />
+        app:layout_constraintEnd_toEndOf="@+id/settingstop"
+        app:layout_constraintStart_toStartOf="@+id/settingstop"
+        app:layout_constraintTop_toBottomOf="@+id/settingstop" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton7"

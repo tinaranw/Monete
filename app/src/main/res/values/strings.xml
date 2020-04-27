@@ -30,4 +30,15 @@
     <string name="homenavbar">Home</string>
     <string name="historynavbar">History</string>
     <string name="settingsnavbar">Settings</string>
+    <string name="settingstext">Settings</string>
+    <string name="editprofilebtn">Edit Profile</string>
+    <string name="coinssettings">Coins</string>
+    <string name="expenselimsettings">Expense Limit</string>
+    <string name="currsettings">Currency</string>
+    <string name="langsettings">Language</string>
+    <string name="textsizesettings">Text Size</string>
+    <string name="mythemessettings">My Themes</string>
+    <string name="applysettings">Apply</string>
+    <string name="resetsettings">Reset</string>
+    <string name="signoutsettings">Sign Out</string>
 </resources>
