@@ -12,4 +12,22 @@
     <string name="monetebalance">Balance</string>
     <string name="rupiahmonete">Rp.</string>
     <string name="currbal">Current Balance</string>
+    <string name="coinscollect">Collect Your Coins</string>
+    <string name="add5">5</string>
+    <string name="add10">10</string>
+    <string name="addnewrecord">Input Record</string>
+    <string name="inputtype">Input Type</string>
+    <string name="dateinput">Date</string>
+    <string name="amountinput">Amount</string>
+    <string name="rupiahinput">Rp.</string>
+    <string name="taginput">Tag</string>
+    <string name="memoinput">Memo</string>
+    <string name="limitinput">Limit</string>
+    <string name="limit">(75 Character Limit )</string>
+    <string name="addbutton">Add</string>
+    <string name="discardbutton">Discard</string>
+    <string name="none" />
+    <string name="homenavbar">Home</string>
+    <string name="historynavbar">History</string>
+    <string name="settingsnavbar">Settings</string>
 </resources>
