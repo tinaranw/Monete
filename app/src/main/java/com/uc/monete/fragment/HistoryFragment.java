@@ -75,7 +75,7 @@ public class HistoryFragment extends Fragment {
                         JSONObject obj = list.getJSONObject(i);
                         History s = new History(obj.getString("id"), obj.getString("user_id"),
                                 obj.getString("amount"), obj.getString("type"),
-                                obj.getString("tag"), obj.getString("date"), obj.getString("memo"), obj.getString("curr_balance"));
+                                obj.getString("tag"), obj.getString("date"), obj.getString("memo"), obj.getString("cur_balance"));
 
                         histories.add(s);
                     }
