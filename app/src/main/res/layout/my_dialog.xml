@@ -26,14 +26,16 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_bold"
             android:text="M A Y D A Y !"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="368dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:fontFamily="@font/nunito"
             android:text="You have exceeded your daily expense limit. Do you wish to continue ?"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
@@ -45,6 +47,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="15dp"
             android:background="@drawable/button_background"
+            android:fontFamily="@font/nunito"
             android:text="Ok"
             android:textColor="@color/colorPrimary" />
 
