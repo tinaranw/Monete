@@ -7,8 +7,8 @@
     tools:context=".layouts.SettingsActivity">
 
     <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/wavee"
-        android:layout_width="413dp"
+        android:id="@+id/wave"
+        android:layout_width="0dp"
         android:layout_height="354dp"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -17,9 +17,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:lottie_autoPlay="false"
-        app:lottie_fileName="wave.json"
-        app:lottie_loop="false"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="wavee.json"
+        app:lottie_loop="true"
         app:lottie_speed="1.00" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

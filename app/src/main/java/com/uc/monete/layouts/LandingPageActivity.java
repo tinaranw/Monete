@@ -19,7 +19,7 @@ public class LandingPageActivity extends AppCompatActivity {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
 
-            wave = findViewById(R.id.wavee);
+            wave = findViewById(R.id.wave);
             wave.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
