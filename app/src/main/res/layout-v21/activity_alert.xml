@@ -51,7 +51,6 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/nunito_bold"
         android:text="MAYDAY!"
-        android:letterSpacing="100sp"
         android:textSize="36sp"
         app:layout_constraintBottom_toTopOf="@+id/imageView3"
         app:layout_constraintEnd_toEndOf="@+id/imageView2"

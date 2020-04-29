@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cons_fr_home"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.HomeFragment" >
+
+    <ImageView
+        android:id="@+id/tree2"
+        android:layout_width="0dp"
+        android:layout_height="426dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.338"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/monetetree" />
+
+    <TextView
+        android:id="@+id/boxdisplay2"
+        android:layout_width="0dp"
+        android:layout_height="157dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/box"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/boxcoin2"
+        android:layout_width="0dp"
+        android:layout_height="147dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="52dp"
+        android:background="@drawable/boxcoin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="0dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:background="#8B6B62"
+        app:layout_constraintEnd_toEndOf="@+id/boxdisplay2"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/boxdisplay2"
+        app:layout_constraintTop_toBottomOf="@+id/rupiahstring2" />
+
+    <TextView
+        android:id="@+id/balancestring2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/nunito_semibold"
+        android:text="@string/monetebalance"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toTopOf="@+id/boxdisplay2" />
+
+    <TextView
+        android:id="@+id/currbal2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/nunito_extrabold"
+        android:text="@string/currbal"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/boxdisplay2"
+        app:layout_constraintHorizontal_bias="0.23"
+        app:layout_constraintStart_toEndOf="@+id/rupiahstring2"
+        app:layout_constraintTop_toTopOf="@+id/boxdisplay2" />
+
+    <TextView
+        android:id="@+id/rupiahstring2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/nunito_extrabold"
+        android:text="@string/rupiahmonete"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/balancestring2"
+        app:layout_constraintTop_toTopOf="@+id/boxdisplay2" />
+
+    <TextView
+        android:id="@+id/coins2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/nunito_semibold"
+        android:text="@string/coinscollect"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/boxcoin2"
+        app:layout_constraintStart_toStartOf="@+id/boxcoin2"
+        app:layout_constraintTop_toTopOf="@+id/boxcoin2" />
+
+    <ImageView
+        android:id="@+id/money"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toEndOf="@+id/money6"
+        app:layout_constraintTop_toBottomOf="@+id/coins2"
+        app:srcCompat="@drawable/money" />
+
+    <ImageView
+        android:id="@+id/money9"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@+id/boxcoin2"
+        app:layout_constraintTop_toBottomOf="@+id/coins2"
+        app:srcCompat="@drawable/money" />
+
+    <ImageView
+        android:id="@+id/money7"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toEndOf="@+id/money9"
+        app:layout_constraintTop_toBottomOf="@+id/coins2"
+        app:srcCompat="@drawable/money" />
+
+    <ImageView
+        android:id="@+id/money6"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toEndOf="@+id/money7"
+        app:layout_constraintTop_toBottomOf="@+id/coins2"
+        app:srcCompat="@drawable/money" />
+
+    <ImageView
+        android:id="@+id/money8"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/boxcoin2"
+        app:layout_constraintHorizontal_bias="0.142"
+        app:layout_constraintStart_toEndOf="@+id/money"
+        app:layout_constraintTop_toBottomOf="@+id/coins2"
+        app:srcCompat="@drawable/money" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="10dp"
+        android:layout_height="20dp"
+        android:fontFamily="@font/nunito_bold"
+        android:text="@string/add5"
+        app:layout_constraintBottom_toBottomOf="@+id/money7"
+        app:layout_constraintEnd_toEndOf="@+id/money7"
+        app:layout_constraintStart_toStartOf="@+id/money7"
+        app:layout_constraintTop_toBottomOf="@+id/money7" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="10dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito_bold"
+        android:text="@string/add5"
+        app:layout_constraintBottom_toBottomOf="@+id/money6"
+        app:layout_constraintEnd_toEndOf="@+id/money6"
+        app:layout_constraintStart_toStartOf="@+id/money6"
+        app:layout_constraintTop_toBottomOf="@+id/money6" />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="10dp"
+        android:layout_height="20dp"
+        android:fontFamily="@font/nunito_bold"
+        android:text="@string/add5"
+        app:layout_constraintBottom_toBottomOf="@+id/money9"
+        app:layout_constraintEnd_toEndOf="@+id/money9"
+        app:layout_constraintStart_toStartOf="@+id/money9"
+        app:layout_constraintTop_toBottomOf="@+id/money9" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="10dp"
+        android:layout_height="21dp"
+        android:fontFamily="@font/nunito_bold"
+        android:text="@string/add5"
+        app:layout_constraintBottom_toBottomOf="@+id/money"
+        app:layout_constraintEnd_toEndOf="@+id/money"
+        app:layout_constraintStart_toStartOf="@+id/money"
+        app:layout_constraintTop_toBottomOf="@+id/money" />
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito_bold"
+        android:text="@string/add10"
+        app:layout_constraintBottom_toBottomOf="@+id/money8"
+        app:layout_constraintEnd_toEndOf="@+id/money8"
+        app:layout_constraintStart_toStartOf="@+id/money8"
+        app:layout_constraintTop_toBottomOf="@+id/money8" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="72dp"
+        android:clickable="true"
+        app:backgroundTint="#CBC1B5"
+        app:layout_constraintEnd_toEndOf="@+id/boxdisplay2"
+        app:layout_constraintTop_toBottomOf="@+id/view2"
+        app:srcCompat="@drawable/ic_trending_up_black_24dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_add"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="20dp"
+        android:clickable="true"
+        app:backgroundTint="#CBC1B5"
+        app:layout_constraintStart_toStartOf="@+id/boxdisplay2"
+        app:layout_constraintTop_toBottomOf="@+id/view2"
+        app:srcCompat="@drawable/ic_add_black_24dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
