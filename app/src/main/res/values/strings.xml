@@ -49,4 +49,12 @@
     <string name="menu_history">History</string>
     <string name="settings">Settings</string>
     <string name="menu_settings">Settings</string>
+    <string name="history_money_input">55,000</string>
+    <string name="memo_history">Pergi ke MOG</string>
+    <string name="type">Expense</string>
+    <string name="id">01</string>
+    <string name="hist_id" >01</string>
+    <string name="hist_type">Expense</string>
+    <string name="hist_money">55000</string>
+    <string name="hist_memo">Pergi ke MOG</string>
 </resources>

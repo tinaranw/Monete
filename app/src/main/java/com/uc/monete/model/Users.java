@@ -3,7 +3,7 @@ package com.uc.monete.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class users implements Parcelable {
+public class Users implements Parcelable {
     private String id;
     private String name;
     private String email;
@@ -12,10 +12,10 @@ public class users implements Parcelable {
     private String coins;
     private String themes;
 
-    public users() {
+    public Users() {
     }
 
-    public users(String id, String name, String email, String password, String balance, String coins, String themes) {
+    public Users(String id, String name, String email, String password, String balance, String coins, String themes) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -25,7 +25,7 @@ public class users implements Parcelable {
         this.themes = themes;
     }
 
-    protected users(Parcel in) {
+    protected Users(Parcel in) {
         id = in.readString();
         name = in.readString();
         email = in.readString();
@@ -35,15 +35,15 @@ public class users implements Parcelable {
         themes = in.readString();
     }
 
-    public static final Creator<users> CREATOR = new Creator<users>() {
+    public static final Creator<Users> CREATOR = new Creator<Users>() {
         @Override
-        public users createFromParcel(Parcel in) {
-            return new users(in);
+        public Users createFromParcel(Parcel in) {
+            return new Users(in);
         }
 
         @Override
-        public users[] newArray(int size) {
-            return new users[size];
+        public Users[] newArray(int size) {
+            return new Users[size];
         }
     };
 

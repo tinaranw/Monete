@@ -3,7 +3,7 @@ package com.uc.monete.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class history implements Parcelable {
+public class History implements Parcelable {
     private String id;
     private String user_id;
     private String amount;
@@ -13,7 +13,7 @@ public class history implements Parcelable {
     private String memo;
     private String curr_balance;
 
-    public history(String id, String user_id, String amount, String type, String tag, String date, String memo, String curr_balance) {
+    public History(String id, String user_id, String amount, String type, String tag, String date, String memo, String curr_balance) {
         this.id = id;
         this.user_id = user_id;
         this.amount = amount;
@@ -24,11 +24,11 @@ public class history implements Parcelable {
         this.curr_balance = curr_balance;
     }
 
-    public history(){
+    public History(){
 
     }
 
-    protected history(Parcel in) {
+    protected History(Parcel in) {
         id = in.readString();
         user_id = in.readString();
         amount = in.readString();
@@ -39,15 +39,15 @@ public class history implements Parcelable {
         curr_balance = in.readString();
     }
 
-    public static final Creator<history> CREATOR = new Creator<history>() {
+    public static final Creator<History> CREATOR = new Creator<History>() {
         @Override
-        public history createFromParcel(Parcel in) {
-            return new history(in);
+        public History createFromParcel(Parcel in) {
+            return new History(in);
         }
 
         @Override
-        public history[] newArray(int size) {
-            return new history[size];
+        public History[] newArray(int size) {
+            return new History[size];
         }
     };
 

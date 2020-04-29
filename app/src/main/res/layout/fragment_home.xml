@@ -106,7 +106,7 @@
         app:layout_constraintTop_toTopOf="@+id/boxcoin2" />
 
     <ImageView
-        android:id="@+id/money"
+        android:id="@+id/hist_money"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
@@ -154,7 +154,7 @@
         android:layout_marginEnd="48dp"
         app:layout_constraintEnd_toEndOf="@+id/boxcoin2"
         app:layout_constraintHorizontal_bias="0.142"
-        app:layout_constraintStart_toEndOf="@+id/money"
+        app:layout_constraintStart_toEndOf="@+id/hist_money"
         app:layout_constraintTop_toBottomOf="@+id/coins2"
         app:srcCompat="@drawable/money" />
 
@@ -197,10 +197,10 @@
         android:layout_height="21dp"
         android:fontFamily="@font/nunito_bold"
         android:text="@string/add5"
-        app:layout_constraintBottom_toBottomOf="@+id/money"
-        app:layout_constraintEnd_toEndOf="@+id/money"
-        app:layout_constraintStart_toStartOf="@+id/money"
-        app:layout_constraintTop_toBottomOf="@+id/money" />
+        app:layout_constraintBottom_toBottomOf="@+id/hist_money"
+        app:layout_constraintEnd_toEndOf="@+id/hist_money"
+        app:layout_constraintStart_toStartOf="@+id/hist_money"
+        app:layout_constraintTop_toBottomOf="@+id/hist_money" />
 
     <TextView
         android:id="@+id/textView26"
