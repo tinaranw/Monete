@@ -57,4 +57,7 @@
     <string name="hist_type">Expense</string>
     <string name="hist_money">55000</string>
     <string name="hist_memo">Pergi ke MOG</string>
+    <string name="sett_coins">120</string>
+    <string name="sett_name">Name</string>
+    <string name="sett_email">Email</string>
 </resources>

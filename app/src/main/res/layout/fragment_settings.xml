@@ -1,14 +1,266 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cons_fr_settings"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.SettingsFragment">
+    tools:context=".fragment.SettingsFragment" >
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:fillViewport="true">
 
-</FrameLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/button14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/nobgbutton"
+                android:text="@string/signoutsettings"
+                android:textColor="#EB3F1D"
+                app:layout_constraintStart_toStartOf="@+id/spinner6"
+                app:layout_constraintTop_toBottomOf="@+id/button12" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginEnd="24dp"
+                app:layout_constraintBottom_toBottomOf="@+id/currcoins3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/currcoins3"
+                app:srcCompat="@drawable/money" />
+
+            <TextView
+                android:id="@+id/currcoins3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/sett_coins"
+                app:layout_constraintEnd_toStartOf="@+id/imageView4"
+                app:layout_constraintTop_toBottomOf="@+id/boxprofile3" />
+
+            <Button
+                android:id="@+id/button11"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/box"
+                app:layout_constraintEnd_toEndOf="@+id/spinner5"
+                app:layout_constraintTop_toBottomOf="@+id/spinner5" />
+
+            <Button
+                android:id="@+id/button12"
+                android:layout_width="85dp"
+                android:layout_height="37dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/secondaybutton"
+                android:fontFamily="@font/nunito"
+                android:text="@string/resetsettings"
+                android:textAllCaps="false"
+                android:textColor="#A19892"
+                app:layout_constraintEnd_toStartOf="@+id/button13"
+                app:layout_constraintTop_toTopOf="@+id/button13" />
+
+            <Button
+                android:id="@+id/button13"
+                android:layout_width="85dp"
+                android:layout_height="37dp"
+                android:layout_marginTop="44dp"
+                android:background="@drawable/primarybutton"
+                android:text="@string/applysettings"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                app:layout_constraintEnd_toEndOf="@+id/spinner6"
+                app:layout_constraintTop_toBottomOf="@+id/spinner6" />
+
+            <TextView
+                android:id="@+id/boxprofile3"
+                android:layout_width="0dp"
+                android:layout_height="140dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/boxicon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editprofilebtn3" />
+
+            <Button
+                android:id="@+id/editprofilebtn3"
+                android:layout_width="97dp"
+                android:layout_height="34dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/secondaybutton"
+                android:text="@string/editprofilebtn"
+                android:textAllCaps="false"
+                android:textColor="#A19892"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textsizesettings3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/nunito"
+                android:text="@string/textsizesettings"
+                app:layout_constraintStart_toStartOf="@+id/languagesettings3"
+                app:layout_constraintTop_toBottomOf="@+id/languagesettings3" />
+
+            <TextView
+                android:id="@+id/currencysettings3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/nunito"
+                android:text="@string/currsettings"
+                app:layout_constraintStart_toStartOf="@+id/expenselimsettings3"
+                app:layout_constraintTop_toBottomOf="@+id/expenselimsettings3" />
+
+            <TextView
+                android:id="@+id/expenselimsettings3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/nunito"
+                android:text="@string/expenselimsettings"
+                app:layout_constraintStart_toStartOf="@+id/coinsettings3"
+                app:layout_constraintTop_toBottomOf="@+id/coinsettings3" />
+
+            <TextView
+                android:id="@+id/languagesettings3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/nunito"
+                android:text="@string/langsettings"
+                app:layout_constraintStart_toStartOf="@+id/currencysettings3"
+                app:layout_constraintTop_toBottomOf="@+id/currencysettings3" />
+
+            <TextView
+                android:id="@+id/coinsettings3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:fontFamily="@font/nunito"
+                android:text="@string/coinssettings"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/boxprofile3" />
+
+            <TextView
+                android:id="@+id/mythemessettings3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/nunito"
+                android:text="@string/mythemessettings"
+                app:layout_constraintStart_toStartOf="@+id/textsizesettings3"
+                app:layout_constraintTop_toBottomOf="@+id/textsizesettings3" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout3"
+                android:layout_width="170dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/boxicon"
+                app:layout_constraintEnd_toEndOf="@+id/imageView4"
+                app:layout_constraintTop_toBottomOf="@+id/currcoins3">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Spinner
+                android:id="@+id/spinner3"
+                android:layout_width="170dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/boxicon"
+                app:layout_constraintEnd_toEndOf="@+id/textInputLayout3"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
+
+            <Spinner
+                android:id="@+id/spinner4"
+                android:layout_width="170dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/boxicon"
+                app:layout_constraintEnd_toEndOf="@+id/spinner3"
+                app:layout_constraintTop_toBottomOf="@+id/spinner3" />
+
+            <Spinner
+                android:id="@+id/spinner5"
+                android:layout_width="170dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/boxicon"
+                app:layout_constraintEnd_toEndOf="@+id/spinner4"
+                app:layout_constraintTop_toBottomOf="@+id/spinner4" />
+
+            <Spinner
+                android:id="@+id/spinner6"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/boxicon"
+                app:layout_constraintEnd_toEndOf="@+id/spinner4"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/mythemessettings3"
+                app:layout_constraintTop_toBottomOf="@+id/button11" />
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="92dp"
+                android:layout_height="96dp"
+                android:layout_marginStart="24dp"
+                android:src="@drawable/ic_account_circle_black_24dp"
+                app:layout_constraintBottom_toBottomOf="@+id/boxprofile3"
+                app:layout_constraintStart_toStartOf="@+id/boxprofile3"
+                app:layout_constraintTop_toTopOf="@+id/boxprofile3" />
+
+            <TextView
+                android:id="@+id/sett_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/nunito_extrabold"
+                android:text="@string/sett_name"
+                android:textSize="24sp"
+                app:layout_constraintStart_toEndOf="@+id/imageView6"
+                app:layout_constraintTop_toTopOf="@+id/imageView6" />
+
+            <View
+                android:id="@+id/line4"
+                android:layout_width="0dp"
+                android:layout_height="4dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="24dp"
+                android:background="#8B6B62"
+                app:layout_constraintEnd_toEndOf="@+id/boxprofile3"
+                app:layout_constraintStart_toStartOf="@+id/sett_name"
+                app:layout_constraintTop_toBottomOf="@+id/sett_name" />
+
+            <TextView
+                android:id="@+id/sett_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/nunito_semibold"
+                android:text="@string/sett_email"
+                app:layout_constraintStart_toStartOf="@+id/sett_name"
+                app:layout_constraintTop_toBottomOf="@+id/line4" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
