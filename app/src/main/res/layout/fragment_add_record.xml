@@ -30,7 +30,7 @@
         android:id="@+id/fr_amount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="48dp"
         android:text="@string/fr_amount"
         app:layout_constraintStart_toStartOf="@+id/fr_date"
         app:layout_constraintTop_toBottomOf="@+id/fr_date" />
@@ -88,6 +88,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:text="@string/rupiahinput"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/input_amount"
         app:layout_constraintEnd_toStartOf="@+id/input_amount"
         app:layout_constraintTop_toTopOf="@+id/input_amount" />
@@ -95,7 +96,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/input_amount"
         android:layout_width="131dp"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:background="@drawable/inputbox"
         app:layout_constraintEnd_toEndOf="@+id/input_date"
@@ -104,10 +105,12 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="20dp"
+            android:layout_height="wrap_content"
             android:background="@drawable/inputbox"
+            android:fontFamily="@font/nunito"
             android:hint="Input money"
-            android:inputType="number" />
+            android:inputType="number"
+            android:textSize="18sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <ImageView
@@ -121,9 +124,9 @@
         app:layout_constraintTop_toTopOf="@+id/spinner_tags" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout6"
-        android:layout_width="253dp"
-        android:layout_height="130dp"
+        android:id="@+id/input_memo"
+        android:layout_width="206dp"
+        android:layout_height="131dp"
         android:layout_marginTop="54dp"
         android:background="@drawable/inputbox"
         app:layout_constraintEnd_toEndOf="@+id/spinner_tags"
@@ -132,7 +135,9 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Memo here" />
+            android:fontFamily="@font/nunito"
+            android:hint="Memo here"
+            android:textSize="12sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -143,8 +148,8 @@
         android:background="@drawable/primarybutton"
         android:text="@string/addbutton"
         android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="@+id/textInputLayout6"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout6" />
+        app:layout_constraintEnd_toEndOf="@+id/input_memo"
+        app:layout_constraintTop_toBottomOf="@+id/input_memo" />
 
     <Button
         android:id="@+id/fr_discardrecord"
@@ -161,7 +166,7 @@
     <TextView
         android:id="@+id/input_date"
         android:layout_width="0dp"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:background="@drawable/inputbox"
         android:text="@string/fr_dateInput"

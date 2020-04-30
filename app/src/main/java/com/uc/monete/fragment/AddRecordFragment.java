@@ -11,51 +11,62 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputLayout;
 import com.uc.monete.R;
+import com.uc.monete.api.BackgroundWorker;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
 
-public class AddRecordFragment extends Fragment implements AdapterView.OnItemSelectedListener {
+public class AddRecordFragment extends Fragment implements TextWatcher, AdapterView.OnItemSelectedListener  {
 
+    TextInputLayout amount, memo;
+    TextView date;
     Spinner spinnertag, spinnertype;
+    String hist_user_id, hist_amount, hist_type, hist_tag, hist_date, hist_memo, hist_cur_balance;
+
     public AddRecordFragment() {
         // Required empty public constructor
-    }
-
-
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-//        return inflater.inflate(R.layout.fragment_add_record, container, false);
+
         View v = inflater.inflate(R.layout.fragment_add_record, container, false);
+
+        spinnertype = v.findViewById(R.id.spinner_inputtype);
+        date = v.findViewById(R.id.input_date);
+        amount = v.findViewById(R.id.input_amount);
+        spinnertag = v.findViewById(R.id.spinner_tags);
+        memo = v.findViewById(R.id.input_memo);
+
+        amount.getEditText().addTextChangedListener(this);
+        memo.getEditText().addTextChangedListener(this);
+
+        //SPINNER TAG
         final ImageView tag_img =  v.findViewById(R.id.fr_tag_image);
         final Spinner spinnerTag = (Spinner) v.findViewById(R.id.spinner_tags);
         ArrayAdapter<String> adapterTag = new ArrayAdapter<String>(this.getContext(), android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.tags));
         adapterTag.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerTag.setAdapter(adapterTag);
 
+        //CHANGE IMAGE
         spinnerTag.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -84,11 +95,13 @@ public class AddRecordFragment extends Fragment implements AdapterView.OnItemSel
             }
         });
 
+        //SPINNER TYPE
         Spinner spinnerType = (Spinner) v.findViewById(R.id.spinner_inputtype);
         ArrayAdapter<String> adapterType = new ArrayAdapter<String>(this.getContext(), android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.inputType));
         adapterType.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerType.setAdapter(adapterType);
 
+        //TEXTVIEW DATE
         TextView dateRecord = v.findViewById(R.id.input_date);
 
         SimpleDateFormat dateF = new SimpleDateFormat("EEE, d MMM yyyy", Locale.getDefault());
@@ -96,29 +109,36 @@ public class AddRecordFragment extends Fragment implements AdapterView.OnItemSel
 
         dateRecord.setText(date);
 
+
+
         return v;
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+
+
         Button btn_addrecord = view.findViewById(R.id.fr_addrecord);
         Button btn_discardrecord = view.findViewById(R.id.fr_discardrecord);
-
-//        spinnertag = view.findViewById(R.id.spinner_tags);
-//        spinnertype = view.findViewById(R.id.spinner_inputtype);
-//
-//        ArrayAdapter<CharSequence> adapterTag  = ArrayAdapter.createFromResource(view.getContext(), R.array.tags, android.R.layout.simple_spinner_item);
-//        adapterTag.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        spinnertag.setAdapter(adapterTag);
-//        spinnertag.setOnItemClickListener(view.getContext());
-
 
 
 
         btn_addrecord.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+
+                //SEND DATA
+
+                String hist_user_id ="1";
+                String hist_cur_balance ="270000";
+                BackgroundWorker backgroundWorker = new BackgroundWorker(view.getContext());
+                backgroundWorker.execute(hist_user_id,hist_amount, hist_type, hist_tag, hist_date, hist_memo, hist_cur_balance);
+
+
+
+
                 Fragment fragment = new HistoryFragment();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -151,4 +171,35 @@ public class AddRecordFragment extends Fragment implements AdapterView.OnItemSel
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
+
+    @Override
+    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+    }
+
+    @Override
+    public void onTextChanged(CharSequence s, int start, int before, int count) {
+        hist_amount = amount.getEditText().getText().toString().trim();
+        hist_type = spinnertype.getSelectedItem().toString();
+        hist_tag = spinnertag.getSelectedItem().toString();
+        hist_date = date.getText().toString().trim();
+        hist_memo = memo.getEditText().getText().toString().trim();
+    }
+
+    @Override
+    public void afterTextChanged(Editable s) {
+
+    }
+
+//    public void OnAddRecord (View view) {
+//        hist_amount = amount.getEditText().getText().toString().trim();
+//        hist_type = spinnertype.getSelectedItem().toString();
+//        hist_tag = spinnertag.getSelectedItem().toString();
+//        hist_date = date.getText().toString().trim();
+//        hist_memo = memo.getEditText().getText().toString().trim();
+//        String hist_user_id ="1";
+//        String hist_cur_balance ="270000";
+//        BackgroundWorker backgroundWorker = new BackgroundWorker(view.getContext());
+//        backgroundWorker.execute(hist_user_id,hist_amount, hist_type, hist_tag, hist_date, hist_memo, hist_cur_balance);
+//    }
 }
