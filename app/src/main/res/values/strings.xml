@@ -65,6 +65,7 @@
     <string name="fr_date">Date</string>
     <string name="fr_tag">Tag</string>
     <string name="fr_memo">Memo</string>
+    <string name="fr_dateInput" />
 
     <string-array name="inputType">
         <item>Income</item>
