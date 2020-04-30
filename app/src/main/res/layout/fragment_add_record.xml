@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="32dp"
         android:text="@string/fr_inputtype"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -67,7 +67,7 @@
         android:id="@+id/spinner_inputtype"
         android:layout_width="131dp"
         android:layout_height="30dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="24dp"
         android:background="@drawable/inputbox"
         app:layout_constraintEnd_toEndOf="parent"
@@ -136,12 +136,9 @@
         android:id="@+id/textInputLayout6"
         android:layout_width="253dp"
         android:layout_height="130dp"
-        android:layout_marginStart="64dp"
         android:layout_marginTop="54dp"
         android:background="@drawable/inputbox"
         app:layout_constraintEnd_toEndOf="@+id/spinner_inputtype2"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/fr_memo"
         app:layout_constraintTop_toBottomOf="@+id/spinner_inputtype2">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -162,7 +159,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout6" />
 
     <Button
-        android:id="@+id/fr_addrecord2"
+        android:id="@+id/fr_discardrecord"
         android:layout_width="86dp"
         android:layout_height="36dp"
         android:layout_marginEnd="24dp"
