@@ -6,11 +6,8 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -18,8 +15,6 @@ import com.uc.monete.R;
 import com.uc.monete.fragment.HistoryFragment;
 import com.uc.monete.fragment.HomeFragment;
 import com.uc.monete.fragment.SettingsFragment;
-import com.uc.monete.layouts.HistoryActivity;
-import com.uc.monete.layouts.SettingsActivity;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -12,9 +12,6 @@
         android:roundIcon="@drawable/moneteicon2"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".layouts.HistoryActivity"></activity>
-        <activity android:name=".layouts.SettingsActivity" />
-        <activity android:name=".layouts.AddRecordActivity" />
         <activity
             android:name=".model.login.LoginActivity"
             android:label="@string/title_activity_login" />

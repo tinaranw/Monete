@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -49,11 +50,39 @@ public class AddRecordFragment extends Fragment implements AdapterView.OnItemSel
         // Inflate the layout for this fragment
 //        return inflater.inflate(R.layout.fragment_add_record, container, false);
         View v = inflater.inflate(R.layout.fragment_add_record, container, false);
-
-        Spinner spinnerTag = (Spinner) v.findViewById(R.id.spinner_tags);
+        final ImageView tag_img =  v.findViewById(R.id.fr_tag_image);
+        final Spinner spinnerTag = (Spinner) v.findViewById(R.id.spinner_tags);
         ArrayAdapter<String> adapterTag = new ArrayAdapter<String>(this.getContext(), android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.tags));
         adapterTag.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerTag.setAdapter(adapterTag);
+
+        spinnerTag.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if(getResources().getStringArray(R.array.tags)[0].equals(spinnerTag.getItemAtPosition(position).toString())){
+                    tag_img.setImageResource(R.drawable.ic_shopping_cart_black_24dp);
+                } else if (getResources().getStringArray(R.array.tags)[1].equals(spinnerTag.getItemAtPosition(position).toString())){
+                    tag_img.setImageResource(R.drawable.ic_local_play_black_24dp);
+                } else if (getResources().getStringArray(R.array.tags)[2].equals(spinnerTag.getItemAtPosition(position).toString())){
+                    tag_img.setImageResource(R.drawable.ic_directions_car_black_24dp);
+                } else if (getResources().getStringArray(R.array.tags)[3].equals(spinnerTag.getItemAtPosition(position).toString())){
+                    tag_img.setImageResource(R.drawable.ic_restaurant_menu_black_24dp);
+                } else if (getResources().getStringArray(R.array.tags)[4].equals(spinnerTag.getItemAtPosition(position).toString())){
+                    tag_img.setImageResource(R.drawable.ic_flash_on_black_24dp);
+                } else if (getResources().getStringArray(R.array.tags)[5].equals(spinnerTag.getItemAtPosition(position).toString())){
+                    tag_img.setImageResource(R.drawable.ic_credit_card_black_24dp);
+                } else if (getResources().getStringArray(R.array.tags)[6].equals(spinnerTag.getItemAtPosition(position).toString())){
+                    tag_img.setImageResource(R.drawable.ic_card_giftcard_black_24dp);
+                } else if (getResources().getStringArray(R.array.tags)[7].equals(spinnerTag.getItemAtPosition(position).toString())){
+                    tag_img.setImageResource(R.drawable.ic_attach_money_black_24dp);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         Spinner spinnerType = (Spinner) v.findViewById(R.id.spinner_inputtype);
         ArrayAdapter<String> adapterType = new ArrayAdapter<String>(this.getContext(), android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.inputType));
