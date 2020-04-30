@@ -65,4 +65,20 @@
     <string name="fr_date">Date</string>
     <string name="fr_tag">Tag</string>
     <string name="fr_memo">Memo</string>
+
+    <string-array name="inputType">
+        <item>Income</item>
+        <item>Expense</item>
+    </string-array>
+
+    <string-array name="tags">
+        <item>Groceries</item>
+        <item>Entertainment</item>
+        <item>Transport</item>
+        <item>FnB</item>
+        <item>Bills</item>
+        <item>Debt</item>
+        <item>Shopping</item>
+        <item>Earnings</item>
+    </string-array>
 </resources>
