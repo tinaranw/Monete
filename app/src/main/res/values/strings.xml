@@ -60,4 +60,9 @@
     <string name="sett_coins">120</string>
     <string name="sett_name">Name</string>
     <string name="sett_email">Email</string>
+    <string name="fr_inputtype">Input Type</string>
+    <string name="fr_amount">Amount</string>
+    <string name="fr_date">Date</string>
+    <string name="fr_tag">Tag</string>
+    <string name="fr_memo">Memo</string>
 </resources>

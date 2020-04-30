@@ -1,14 +1,176 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cons_fr_addrecord"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.AddRecordFragment">
+    tools:context=".fragment.AddRecordFragment" >
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/fr_inputtype"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="100dp"
+        android:text="@string/fr_inputtype"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/fr_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/fr_date"
+        app:layout_constraintStart_toStartOf="@+id/fr_inputtype"
+        app:layout_constraintTop_toBottomOf="@+id/fr_inputtype" />
+
+    <TextView
+        android:id="@+id/fr_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="@string/fr_amount"
+        app:layout_constraintStart_toStartOf="@+id/fr_date"
+        app:layout_constraintTop_toBottomOf="@+id/fr_date" />
+
+    <TextView
+        android:id="@+id/fr_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="58dp"
+        android:text="@string/fr_tag"
+        app:layout_constraintStart_toStartOf="@+id/fr_amount"
+        app:layout_constraintTop_toBottomOf="@+id/fr_amount" />
+
+    <TextView
+        android:id="@+id/fr_memo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:text="@string/fr_memo"
+        app:layout_constraintStart_toStartOf="@+id/fr_tag"
+        app:layout_constraintTop_toBottomOf="@+id/fr_tag" />
+
+    <TextView
+        android:id="@+id/fr_memo2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/limit"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="@+id/fr_memo"
+        app:layout_constraintTop_toBottomOf="@+id/fr_memo" />
+
+    <Spinner
+        android:id="@+id/spinner_inputtype"
+        android:layout_width="131dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/inputbox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinner_inputtype2"
+        android:layout_width="131dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/inputbox"
+        app:layout_constraintEnd_toEndOf="@+id/input_amount"
+        app:layout_constraintStart_toEndOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/input_amount" />
+
+    <EditText
+        android:id="@+id/input_date"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/inputbox"
+        android:ems="10"
+        android:inputType="date"
+        app:layout_constraintEnd_toEndOf="@+id/spinner_inputtype"
+        app:layout_constraintStart_toStartOf="@+id/spinner_inputtype"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_inputtype" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/rupiahinput"
+        app:layout_constraintBottom_toBottomOf="@+id/input_amount"
+        app:layout_constraintEnd_toStartOf="@+id/input_amount"
+        app:layout_constraintTop_toTopOf="@+id/input_amount" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_amount"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/inputbox"
+        app:layout_constraintEnd_toEndOf="@+id/input_date"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/input_date"
+        app:layout_constraintTop_toBottomOf="@+id/input_date">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/inputbox"
+            android:hint="hint" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/ic_card_giftcard_black_24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/spinner_inputtype2"
+        app:layout_constraintEnd_toStartOf="@+id/spinner_inputtype2"
+        app:layout_constraintTop_toTopOf="@+id/spinner_inputtype2" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout6"
+        android:layout_width="253dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="54dp"
+        android:background="@drawable/inputbox"
+        app:layout_constraintEnd_toEndOf="@+id/spinner_inputtype2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/fr_memo"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_inputtype2">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="hint" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/fr_addrecord"
+        android:layout_width="86dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/primarybutton"
+        android:text="@string/addbutton"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayout6"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout6" />
+
+    <Button
+        android:id="@+id/fr_addrecord2"
+        android:layout_width="86dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/secondaybutton"
+        android:text="@string/discardbutton"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="@+id/fr_addrecord"
+        app:layout_constraintEnd_toStartOf="@+id/fr_addrecord"
+        app:layout_constraintTop_toTopOf="@+id/fr_addrecord" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
