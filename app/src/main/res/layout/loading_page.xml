@@ -29,7 +29,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="56dp"
         android:fontFamily="@font/nunito_bold"
-        android:text="One moment please..."
+        android:text="Just a Moment..."
         android:textColor="#51331F "
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
