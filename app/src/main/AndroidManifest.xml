@@ -18,15 +18,17 @@
         android:usesCleartextTraffic="true">
 
         <activity android:name=".activities.LoginActivity">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-    </activity>
+        </activity>
 
         <activity android:name=".activities.MainActivity">
+        </activity>
 
+        <activity android:name=".layouts.LandingPageActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <meta-data

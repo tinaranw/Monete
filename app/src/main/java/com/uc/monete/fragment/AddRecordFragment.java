@@ -62,7 +62,7 @@ public class AddRecordFragment extends Fragment implements TextWatcher, AdapterV
 
         //SPINNER TAG
         final ImageView tag_img =  v.findViewById(R.id.fr_tag_image);
-        final Spinner spinnerTag = (Spinner) v.findViewById(R.id.spinner_tags);
+        final Spinner spinnerTag = v.findViewById(R.id.spinner_tags);
         ArrayAdapter<String> adapterTag = new ArrayAdapter<String>(this.getContext(), android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.tags));
         adapterTag.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerTag.setAdapter(adapterTag);
@@ -109,9 +109,6 @@ public class AddRecordFragment extends Fragment implements TextWatcher, AdapterV
         String date = dateF.format(Calendar.getInstance().getTime());
 
         dateRecord.setText(date);
-
-
-
         return v;
     }
 
