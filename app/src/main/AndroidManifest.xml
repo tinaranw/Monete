@@ -23,6 +23,9 @@
         <activity android:name=".activities.MainActivity">
         </activity>
 
+        <activity android:name=".layouts.LoadingPageActivity">
+        </activity>
+
         <activity android:name=".layouts.LandingPageActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

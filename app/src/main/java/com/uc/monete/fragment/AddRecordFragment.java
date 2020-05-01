@@ -2,6 +2,7 @@ package com.uc.monete.fragment;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -28,6 +29,7 @@ import android.widget.TextView;
 import com.google.android.material.textfield.TextInputLayout;
 import com.uc.monete.R;
 import com.uc.monete.api.BackgroundWorker;
+import com.uc.monete.layouts.LoadingPageActivity;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -137,6 +139,9 @@ public class AddRecordFragment extends Fragment implements TextWatcher, AdapterV
 
                 Fragment fragment = new HistoryFragment();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+
+//                Intent intent = new Intent(getActivity(), LoadingPageActivity.class);
+//                startActivity(intent);
 
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.frame_main, fragment);
