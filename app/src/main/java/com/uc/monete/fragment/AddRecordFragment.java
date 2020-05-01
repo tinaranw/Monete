@@ -131,11 +131,11 @@ public class AddRecordFragment extends Fragment implements TextWatcher, AdapterV
             public void onClick(View v) {
 
                 //SEND DATA
-
+                String activityType = "addRecord";
                 String hist_user_id ="1";
                 String hist_cur_balance ="270000";
                 BackgroundWorker backgroundWorker = new BackgroundWorker(view.getContext());
-                backgroundWorker.execute(hist_user_id,hist_amount, hist_type, hist_tag, hist_date, hist_memo, hist_cur_balance);
+                backgroundWorker.execute(activityType,hist_amount, hist_type, hist_tag, hist_date, hist_memo, hist_cur_balance);
 
 
                 Fragment fragment = new HistoryFragment();

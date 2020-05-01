@@ -53,7 +53,7 @@
     <string name="memo_history">Pergi ke MOG</string>
     <string name="type">Expense</string>
     <string name="id">01</string>
-    <string name="hist_id" >01</string>
+    <string name="hist_id">01</string>
     <string name="hist_type">Expense</string>
     <string name="hist_money">55000</string>
     <string name="hist_memo">Pergi ke MOG</string>
@@ -66,6 +66,12 @@
     <string name="fr_tag">Tag</string>
     <string name="fr_memo">Memo</string>
     <string name="fr_dateInput" />
+    <string name="LoginTitle">Log In</string>
+    <string name="btnlogin">Log In</string>
+    <string name="btnsignup">Sign Up</string>
+    <string name="forgotpassword">Forgot Password?</string>
+    <string name="loginEmail">Email</string>
+    <string name="loginPassword">Password</string>
 
     <string-array name="inputType">
         <item>Income</item>

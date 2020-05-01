@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.loopj.android.http.AsyncHttpClient;
 import com.uc.monete.R;
 
 
@@ -77,5 +78,11 @@ public class HomeFragment extends Fragment {
                 fragmentTransaction.commit();
             }
         });
+    }
+
+    private void getUserData(){
+        AsyncHttpClient client = new AsyncHttpClient();
+        String url = "http://iamtinara.com/api/list.php";
+
     }
 }
