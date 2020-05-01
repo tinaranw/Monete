@@ -13,6 +13,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -104,7 +105,7 @@ public class AddRecordFragment extends Fragment implements TextWatcher, AdapterV
         //TEXTVIEW DATE
         TextView dateRecord = v.findViewById(R.id.input_date);
 
-        SimpleDateFormat dateF = new SimpleDateFormat("EEE, d MMM yyyy", Locale.getDefault());
+        SimpleDateFormat dateF = new SimpleDateFormat("yyyy/MM/dd ", Locale.getDefault());
         String date = dateF.format(Calendar.getInstance().getTime());
 
         dateRecord.setText(date);
@@ -137,10 +138,9 @@ public class AddRecordFragment extends Fragment implements TextWatcher, AdapterV
                 backgroundWorker.execute(hist_user_id,hist_amount, hist_type, hist_tag, hist_date, hist_memo, hist_cur_balance);
 
 
-
-
                 Fragment fragment = new HistoryFragment();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.frame_main, fragment);
                 fragmentTransaction.addToBackStack(null);
@@ -191,15 +191,4 @@ public class AddRecordFragment extends Fragment implements TextWatcher, AdapterV
 
     }
 
-//    public void OnAddRecord (View view) {
-//        hist_amount = amount.getEditText().getText().toString().trim();
-//        hist_type = spinnertype.getSelectedItem().toString();
-//        hist_tag = spinnertag.getSelectedItem().toString();
-//        hist_date = date.getText().toString().trim();
-//        hist_memo = memo.getEditText().getText().toString().trim();
-//        String hist_user_id ="1";
-//        String hist_cur_balance ="270000";
-//        BackgroundWorker backgroundWorker = new BackgroundWorker(view.getContext());
-//        backgroundWorker.execute(hist_user_id,hist_amount, hist_type, hist_tag, hist_date, hist_memo, hist_cur_balance);
-//    }
 }

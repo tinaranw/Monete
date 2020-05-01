@@ -3,6 +3,7 @@ package com.uc.monete.api;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -18,6 +19,8 @@ import java.net.URLEncoder;
 
 
 public class BackgroundWorker extends AsyncTask<String, Void, String> {
+
+
     AlertDialog alertDialog;
 
 
@@ -29,16 +32,18 @@ public class BackgroundWorker extends AsyncTask<String, Void, String> {
 
     @Override
     protected String doInBackground(String... params) {
+
         String user_id = params[0];
         String insertRecord_url = "http://iamtinara.com/api/insert.php";
         if(user_id.equals("1")){
+
             try {
-                String hist_amount = params[1];
-                String hist_type = params[2];
-                String hist_tag = params[3];
-                String hist_date = params[4];
-                String hist_memo = params[5];
-                String hist_cur_balance = params[6];
+                String amount = params[1];
+                String type = params[2];
+                String tag = params[3];
+                String date = params[4];
+                String memo = params[5];
+                String cur_balance = params[6];
                 URL url = new URL(insertRecord_url);
                 HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
                 httpURLConnection.setRequestMethod("POST");
@@ -46,12 +51,12 @@ public class BackgroundWorker extends AsyncTask<String, Void, String> {
                 httpURLConnection.setDoInput(true);
                 OutputStream outputStream = httpURLConnection.getOutputStream();
                 BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
-                String post_data = URLEncoder.encode("hist_amount", "UTF-8")+"="+URLEncoder.encode(hist_amount, "UTF-8")+"&"
-                        +URLEncoder.encode("hist_type", "UTF-8")+"="+URLEncoder.encode(hist_type, "UTF-8")+"&"
-                        +URLEncoder.encode("hist_tag", "UTF-8")+"="+URLEncoder.encode(hist_tag, "UTF-8")+"&"
-                        +URLEncoder.encode("hist_date", "UTF-8")+"="+URLEncoder.encode(hist_date, "UTF-8")+"&"
-                        +URLEncoder.encode("hist_memo", "UTF-8")+"="+URLEncoder.encode(hist_memo, "UTF-8")+"&"
-                        +URLEncoder.encode("hist_cur_balance", "UTF-8")+"="+URLEncoder.encode(hist_cur_balance, "UTF-8");
+                String post_data = URLEncoder.encode("amount", "UTF-8")+"="+URLEncoder.encode(amount, "UTF-8")+"&"
+                        +URLEncoder.encode("type", "UTF-8")+"="+URLEncoder.encode(type, "UTF-8")+"&"
+                        +URLEncoder.encode("tag", "UTF-8")+"="+URLEncoder.encode(tag, "UTF-8")+"&"
+                        +URLEncoder.encode("date", "UTF-8")+"="+URLEncoder.encode(date, "UTF-8")+"&"
+                        +URLEncoder.encode("memo", "UTF-8")+"="+URLEncoder.encode(memo, "UTF-8")+"&"
+                        +URLEncoder.encode("cur_balance", "UTF-8")+"="+URLEncoder.encode(cur_balance, "UTF-8");
                 bufferedWriter.write(post_data);
                 bufferedWriter.flush();
                 bufferedWriter.close();
