@@ -42,6 +42,8 @@ public class AddRecordFragment extends Fragment implements TextWatcher, AdapterV
     TextView date;
     Spinner spinnertag, spinnertype;
     String hist_user_id, hist_amount, hist_type, hist_tag, hist_date, hist_memo, hist_cur_balance;
+    Integer int_bal, int_amount;
+
 
     public AddRecordFragment() {
         // Required empty public constructor
@@ -53,21 +55,32 @@ public class AddRecordFragment extends Fragment implements TextWatcher, AdapterV
 
         View v = inflater.inflate(R.layout.fragment_add_record, container, false);
 
-        spinnertype = v.findViewById(R.id.spinner_inputtype);
-        date = v.findViewById(R.id.input_date);
-        amount = v.findViewById(R.id.input_amount);
-        spinnertag = v.findViewById(R.id.spinner_tags);
-        memo = v.findViewById(R.id.input_memo);
+        return v;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull final View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        spinnertype = view.findViewById(R.id.spinner_inputtype);
+        date = view.findViewById(R.id.input_date);
+        amount = view.findViewById(R.id.input_amount);
+        spinnertag = view.findViewById(R.id.spinner_tags);
+        memo = view.findViewById(R.id.input_memo);
 
         amount.getEditText().addTextChangedListener(this);
         memo.getEditText().addTextChangedListener(this);
 
+        hist_user_id ="1";
+        hist_cur_balance ="";
+
         //SPINNER TAG
-        final ImageView tag_img =  v.findViewById(R.id.fr_tag_image);
-        final Spinner spinnerTag = v.findViewById(R.id.spinner_tags);
+        final ImageView tag_img =  view.findViewById(R.id.fr_tag_image);
+        final Spinner spinnerTag = view.findViewById(R.id.spinner_tags);
         ArrayAdapter<String> adapterTag = new ArrayAdapter<String>(this.getContext(), android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.tags));
         adapterTag.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerTag.setAdapter(adapterTag);
+
 
         //CHANGE IMAGE
         spinnerTag.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -99,31 +112,44 @@ public class AddRecordFragment extends Fragment implements TextWatcher, AdapterV
         });
 
         //SPINNER TYPE
-        Spinner spinnerType = (Spinner) v.findViewById(R.id.spinner_inputtype);
+        final Spinner spinnerType = (Spinner) view.findViewById(R.id.spinner_inputtype);
         ArrayAdapter<String> adapterType = new ArrayAdapter<String>(this.getContext(), android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.inputType));
         adapterType.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerType.setAdapter(adapterType);
 
+        //INPUT CURR BALANCE
+        spinnerType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if(hist_amount != null && getResources().getStringArray(R.array.inputType)[0].equals(spinnerType.getItemAtPosition(position).toString())){
+                    //income
+                    int_amount = Integer.parseInt(hist_amount);
+                    hist_cur_balance = String.valueOf(int_amount);
+
+                } else if (hist_amount != null && getResources().getStringArray(R.array.inputType)[1].equals(spinnerType.getItemAtPosition(position).toString())){
+                    //expense
+                    int_amount = Integer.parseInt(hist_amount);
+                    hist_cur_balance = "-" + int_amount;
+                    Log.d("balance", hist_cur_balance);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
         //TEXTVIEW DATE
-        TextView dateRecord = v.findViewById(R.id.input_date);
+        TextView dateRecord = view.findViewById(R.id.input_date);
 
         SimpleDateFormat dateF = new SimpleDateFormat("yyyy/MM/dd ", Locale.getDefault());
         String date = dateF.format(Calendar.getInstance().getTime());
 
         dateRecord.setText(date);
-        return v;
-    }
-
-    @Override
-    public void onViewCreated(@NonNull final View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-
 
         Button btn_addrecord = view.findViewById(R.id.fr_addrecord);
         Button btn_discardrecord = view.findViewById(R.id.fr_discardrecord);
-
-
 
         btn_addrecord.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -131,11 +157,9 @@ public class AddRecordFragment extends Fragment implements TextWatcher, AdapterV
 
                 //SEND DATA
                 String activityType = "addRecord";
-                String hist_user_id ="1";
-                String hist_cur_balance ="270000";
+
                 BackgroundWorker backgroundWorker = new BackgroundWorker(view.getContext());
                 backgroundWorker.execute(activityType,hist_amount, hist_type, hist_tag, hist_date, hist_memo, hist_cur_balance);
-
 
                 Fragment fragment = new HistoryFragment();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
