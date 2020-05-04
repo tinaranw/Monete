@@ -24,7 +24,7 @@ public class History implements Parcelable {
         this.curr_balance = curr_balance;
     }
 
-    public History(){
+    public History(String id, String user_id, String amount, String type, String tag, String date){
 
     }
 
