@@ -93,8 +93,7 @@ public class BackgroundWorker extends AsyncTask<String, Void, String> {
                         +URLEncoder.encode("type", "UTF-8")+"="+URLEncoder.encode(type, "UTF-8")+"&"
                         +URLEncoder.encode("tag", "UTF-8")+"="+URLEncoder.encode(tag, "UTF-8")+"&"
                         +URLEncoder.encode("date", "UTF-8")+"="+URLEncoder.encode(date, "UTF-8")+"&"
-                        +URLEncoder.encode("memo", "UTF-8")+"="+URLEncoder.encode(memo, "UTF-8")+"&"
-                        +URLEncoder.encode("cur_balance", "UTF-8")+"="+URLEncoder.encode(cur_balance, "UTF-8");
+                        +URLEncoder.encode("memo", "UTF-8")+"="+URLEncoder.encode(memo, "UTF-8");
                 bufferedWriter.write(post_data);
                 Log.d("Data sent", post_data);
                 bufferedWriter.flush();

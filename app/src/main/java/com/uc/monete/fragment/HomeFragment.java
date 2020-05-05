@@ -10,19 +10,31 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.uc.monete.R;
+import com.uc.monete.model.History;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+
+import cz.msebera.android.httpclient.Header;
 
 
 public class HomeFragment extends Fragment {
 
     FloatingActionButton addbutton;
+    TextView curbalance;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -66,7 +78,9 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        curbalance = view.findViewById(R.id.currentbalance);
         FloatingActionButton addbutton = view.findViewById(R.id.btn_add);
+        getBalance();
         addbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -80,9 +94,30 @@ public class HomeFragment extends Fragment {
         });
     }
 
-    private void getUserData(){
+    private void getBalance(){
+        final ArrayList<History> histories = new ArrayList<>();
         AsyncHttpClient client = new AsyncHttpClient();
-        String url = "http://iamtinara.com/api/list.php";
+        String url = "http://iamtinara.com/api/curbalance.php";
+
+        client.get(url, new AsyncHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                try {
+                    String result = new String(responseBody);
+                    JSONObject responseObject = new JSONObject(result);
+                    String curbalancetext = responseObject.getString("cur_balance");
+                    curbalance.setText(curbalancetext);
+                } catch (Exception e) {
+                    Log.d("ExceptionHistory", "onSuccess: " + e.getMessage());
+
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                Log.d("onFailureHistory", "onFailure: " + error.getMessage());
+            }
+        });
 
     }
 }

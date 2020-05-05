@@ -70,7 +70,7 @@
         app:layout_constraintTop_toTopOf="@+id/boxdisplay2" />
 
     <TextView
-        android:id="@+id/currbal2"
+        android:id="@+id/currentbalance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -89,9 +89,9 @@
         android:fontFamily="@font/nunito_extrabold"
         android:text="@string/rupiahmonete"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/currbal2"
-        app:layout_constraintEnd_toStartOf="@+id/currbal2"
-        app:layout_constraintTop_toTopOf="@+id/currbal2" />
+        app:layout_constraintBottom_toBottomOf="@+id/currentbalance"
+        app:layout_constraintEnd_toStartOf="@+id/currentbalance"
+        app:layout_constraintTop_toTopOf="@+id/currentbalance" />
 
     <TextView
         android:id="@+id/coins2"
