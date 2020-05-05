@@ -75,7 +75,7 @@ public class main extends AppCompatActivity {
                                         product.getString("tag"),
                                         product.getString("date"),
                                         product.getString("memo"),
-                                        product.getString("curr_balance")
+                                        product.getString("curr_balance"),
                                 ));
                             }
 
