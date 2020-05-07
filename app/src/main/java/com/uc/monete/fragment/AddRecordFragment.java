@@ -29,6 +29,7 @@ import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputLayout;
 import com.uc.monete.R;
+import com.uc.monete.activities.MainActivity;
 import com.uc.monete.api.BackgroundWorker;
 import com.uc.monete.layouts.LoadingPageActivity;
 
@@ -174,6 +175,11 @@ public class AddRecordFragment extends Fragment implements TextWatcher, AdapterV
                 fragmentTransaction.replace(R.id.frame_main, fragment);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
+
+                //untuk loading
+                Intent intent = new Intent(AddRecordFragment.this, HistoryFragment.class);
+                intent.putExtra(MainActivity.FRAGMENT_TO_LOAD, "Quiz");
+                startActivity(intent);
             }
         });
 

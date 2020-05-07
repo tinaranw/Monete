@@ -19,6 +19,8 @@ import com.uc.monete.fragment.HistoryFragment;
 import com.uc.monete.fragment.HomeFragment;
 import com.uc.monete.fragment.SettingsFragment;
 
+import java.util.Objects;
+
 public class MainActivity extends AppCompatActivity {
 
     Toolbar toolbar;
@@ -29,11 +31,12 @@ public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     Button signout;
 
+    public static final String FRAGMENT_TO_LOAD = "fragload";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
 
         toolbar = findViewById(R.id.toolbar_main);
@@ -85,6 +88,12 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
         bottomNavigationView.setSelectedItemId(R.id.menu_home);
 
+        if(Objects.equals(getIntent().getStringExtra(FRAGMENT_TO_LOAD), "Quiz")){
+            navigation.setSelectedItemId(R.id.fr_addrecord);
+        }else{
+            navigation.setSelectedItemId(R.id.);
+
+        }
 }
 
 
