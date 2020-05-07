@@ -34,6 +34,7 @@ import cz.msebera.android.httpclient.Header;
 public class HomeFragment extends Fragment {
 
     FloatingActionButton addbutton;
+    FloatingActionButton overview;
     TextView curbalance;
 
     // TODO: Rename parameter arguments, choose names that match
@@ -80,11 +81,24 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         curbalance = view.findViewById(R.id.currentbalance);
         FloatingActionButton addbutton = view.findViewById(R.id.btn_add);
+        overview = view.findViewById(R.id.btnOverview);
         getBalance();
         addbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Fragment fragment = new AddRecordFragment();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.frame_main, fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
+        });
+
+        overview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = new OverviewFragment();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.frame_main, fragment);
