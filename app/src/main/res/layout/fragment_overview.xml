@@ -93,7 +93,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:fontFamily="@font/nunito"
-        android:text="TextView"
+        android:text="@string/incomeoverview"
         app:layout_constraintBottom_toBottomOf="@+id/incometext"
         app:layout_constraintEnd_toEndOf="@+id/analysisbox"
         app:layout_constraintTop_toTopOf="@+id/incometext" />
@@ -103,7 +103,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/nunito"
-        android:text="TextView"
+        android:text="@string/expenseoverview"
         app:layout_constraintBottom_toBottomOf="@+id/expensetext"
         app:layout_constraintEnd_toEndOf="@+id/incomebal"
         app:layout_constraintTop_toTopOf="@+id/expensetext" />
@@ -113,7 +113,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/nunito"
-        android:text="TextView"
+        android:text="@string/highestexpenseoverview"
         app:layout_constraintBottom_toBottomOf="@+id/highestexpensetext"
         app:layout_constraintEnd_toEndOf="@+id/expensebal"
         app:layout_constraintTop_toTopOf="@+id/highestexpensetext" />
@@ -123,7 +123,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/nunito"
-        android:text="TextView"
+        android:text="@string/lowestexpenseoverview"
         app:layout_constraintBottom_toBottomOf="@+id/lowestexpensetext"
         app:layout_constraintEnd_toEndOf="@+id/highexpensebal"
         app:layout_constraintTop_toTopOf="@+id/lowestexpensetext" />
@@ -133,7 +133,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/nunito"
-        android:text="TextView"
+        android:text="@string/totalbalanceoverview"
         app:layout_constraintBottom_toBottomOf="@+id/totalbalancetext"
         app:layout_constraintEnd_toEndOf="@+id/lowexpensebal"
         app:layout_constraintTop_toTopOf="@+id/totalbalancetext" />

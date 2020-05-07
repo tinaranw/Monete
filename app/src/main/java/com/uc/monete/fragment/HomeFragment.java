@@ -89,8 +89,10 @@ public class HomeFragment extends Fragment {
                 Fragment fragment = new AddRecordFragment();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
                 fragmentTransaction.replace(R.id.frame_main, fragment);
                 fragmentTransaction.addToBackStack(null);
+
                 fragmentTransaction.commit();
             }
         });
@@ -101,8 +103,10 @@ public class HomeFragment extends Fragment {
                 Fragment fragment = new OverviewFragment();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
                 fragmentTransaction.replace(R.id.frame_main, fragment);
                 fragmentTransaction.addToBackStack(null);
+
                 fragmentTransaction.commit();
             }
         });

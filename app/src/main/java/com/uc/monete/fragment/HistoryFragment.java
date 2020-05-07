@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -32,7 +33,7 @@ import cz.msebera.android.httpclient.Header;
 
 
 public class HistoryFragment extends Fragment {
-
+    Toolbar toolbar;
     public HistoryFragment() {
         // Required empty public constructor
     }
@@ -42,7 +43,8 @@ public class HistoryFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
+        toolbar = getActivity().findViewById(R.id.toolbar_main);
+        toolbar.setTitle("History");
         return inflater.inflate(R.layout.fragment_history, container, false);
     }
 

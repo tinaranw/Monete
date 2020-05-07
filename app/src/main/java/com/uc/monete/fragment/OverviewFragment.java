@@ -3,68 +3,94 @@ package com.uc.monete.fragment;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.uc.monete.R;
+import com.uc.monete.model.History;
+
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+
+import cz.msebera.android.httpclient.Header;
 
 
 public class OverviewFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    Toolbar toolbar;
+    TextView incomeText, expenseText, highexText, lowexText, totalbalanceText;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    private OnFragmentInteractionListener mListener;
 
     public OverviewFragment() {
         // Required empty public constructor
     }
 
-
-    // TODO: Rename and change types and number of parameters
-    public static OverviewFragment newInstance(String param1, String param2) {
-        OverviewFragment fragment = new OverviewFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        toolbar = getActivity().findViewById(R.id.toolbar_main);
+        toolbar.setTitle("Overview");
         return inflater.inflate(R.layout.fragment_overview, container, false);
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        incomeText = view.findViewById(R.id.incomebal);
+        expenseText = view.findViewById(R.id.expensebal);
+        highexText = view.findViewById(R.id.highexpensebal);
+        lowexText = view.findViewById(R.id.lowexpensebal);
+        totalbalanceText = view.findViewById(R.id.totalexpensebal);
+
+        getOverview();
     }
 
+    private void getOverview(){
+        final ArrayList<History> histories = new ArrayList<>();
+        AsyncHttpClient client = new AsyncHttpClient();
+        String url = "http://iamtinara.com/api/overview.php";
 
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
+        client.get(url, new AsyncHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                try {
+                    String result = new String(responseBody);
+                    JSONObject responseObject = new JSONObject(result);
+                    String curbalancetext = responseObject.getString("cur_balance");
+                    String income = responseObject.getString("income");
+                    String expense = responseObject.getString("expense");
+                    incomeText.setText(income);
+                    expenseText.setText(expense);
+                    totalbalanceText.setText(curbalancetext);
+                } catch (Exception e) {
+                    Log.d("ExceptionHistory", "onSuccess: " + e.getMessage());
+
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                Log.d("onFailureHistory", "onFailure: " + error.getMessage());
+            }
+        });
+
     }
 }
