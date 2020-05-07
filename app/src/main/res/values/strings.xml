@@ -73,6 +73,11 @@
     <string name="loginEmail">Email</string>
     <string name="loginPassword">Password</string>
     <string name="analysistext">Analysis:</string>
+    <string name="incomeoverview">Income</string>
+    <string name="expenseoverview">Expense</string>
+    <string name="highestexpenseoverview">Highest Expense</string>
+    <string name="lowestexpenseoverview">Lowest Expense</string>
+    <string name="totalbalanceoverview">Total Balance</string>
 
     <string-array name="inputType">
         <item>Income</item>

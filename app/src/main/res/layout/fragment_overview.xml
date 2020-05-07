@@ -9,8 +9,8 @@
 
     <TextView
         android:id="@+id/analysisbox"
-        android:layout_width="0dp"
-        android:layout_height="250dp"
+        android:layout_width="338dp"
+        android:layout_height="233dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="64dp"
@@ -34,9 +34,157 @@
         android:id="@+id/incometext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/nunito_extrabold"
-        android:text="@string/analysistext"
-        android:textSize="24sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/nunito_semibold"
+        android:text="@string/incomeoverview"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/analysisbox"
         app:layout_constraintTop_toTopOf="@+id/analysisbox" />
+
+    <TextView
+        android:id="@+id/expensetext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/nunito_semibold"
+        android:text="@string/expenseoverview"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/incometext"
+        app:layout_constraintTop_toBottomOf="@+id/incometext" />
+
+    <TextView
+        android:id="@+id/highestexpensetext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/nunito_semibold"
+        android:text="@string/highestexpenseoverview"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/expensetext"
+        app:layout_constraintTop_toBottomOf="@+id/expensetext" />
+
+    <TextView
+        android:id="@+id/lowestexpensetext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/nunito_semibold"
+        android:text="@string/lowestexpenseoverview"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/highestexpensetext"
+        app:layout_constraintTop_toBottomOf="@+id/highestexpensetext" />
+
+    <TextView
+        android:id="@+id/totalbalancetext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/nunito_semibold"
+        android:text="@string/totalbalanceoverview"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/expensetext"
+        app:layout_constraintTop_toBottomOf="@+id/lowestexpensetext" />
+
+    <TextView
+        android:id="@+id/incomebal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/nunito"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/incometext"
+        app:layout_constraintEnd_toEndOf="@+id/analysisbox"
+        app:layout_constraintTop_toTopOf="@+id/incometext" />
+
+    <TextView
+        android:id="@+id/expensebal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/expensetext"
+        app:layout_constraintEnd_toEndOf="@+id/incomebal"
+        app:layout_constraintTop_toTopOf="@+id/expensetext" />
+
+    <TextView
+        android:id="@+id/highexpensebal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/highestexpensetext"
+        app:layout_constraintEnd_toEndOf="@+id/expensebal"
+        app:layout_constraintTop_toTopOf="@+id/highestexpensetext" />
+
+    <TextView
+        android:id="@+id/lowexpensebal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/lowestexpensetext"
+        app:layout_constraintEnd_toEndOf="@+id/highexpensebal"
+        app:layout_constraintTop_toTopOf="@+id/lowestexpensetext" />
+
+    <TextView
+        android:id="@+id/totalexpensebal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/totalbalancetext"
+        app:layout_constraintEnd_toEndOf="@+id/lowexpensebal"
+        app:layout_constraintTop_toTopOf="@+id/totalbalancetext" />
+
+    <TextView
+        android:id="@+id/rupiah"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito"
+        android:text="Rp."
+        app:layout_constraintBottom_toBottomOf="@+id/incomebal"
+        app:layout_constraintEnd_toStartOf="@+id/incomebal"
+        app:layout_constraintTop_toTopOf="@+id/incomebal" />
+
+    <TextView
+        android:id="@+id/rupiah2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito"
+        android:text="Rp."
+        app:layout_constraintBottom_toBottomOf="@+id/expensebal"
+        app:layout_constraintEnd_toStartOf="@+id/expensebal"
+        app:layout_constraintTop_toTopOf="@+id/expensebal" />
+
+    <TextView
+        android:id="@+id/rupiah3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito"
+        android:text="Rp."
+        app:layout_constraintBottom_toBottomOf="@+id/highexpensebal"
+        app:layout_constraintEnd_toStartOf="@+id/highexpensebal"
+        app:layout_constraintTop_toTopOf="@+id/highexpensebal" />
+
+    <TextView
+        android:id="@+id/rupiah4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito"
+        android:text="Rp."
+        app:layout_constraintBottom_toBottomOf="@+id/lowexpensebal"
+        app:layout_constraintEnd_toStartOf="@+id/lowexpensebal"
+        app:layout_constraintTop_toTopOf="@+id/lowexpensebal" />
+
+    <TextView
+        android:id="@+id/rupiah5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito"
+        android:text="Rp."
+        app:layout_constraintBottom_toBottomOf="@+id/totalexpensebal"
+        app:layout_constraintEnd_toStartOf="@+id/totalexpensebal"
+        app:layout_constraintTop_toTopOf="@+id/totalexpensebal" />
 </androidx.constraintlayout.widget.ConstraintLayout>
