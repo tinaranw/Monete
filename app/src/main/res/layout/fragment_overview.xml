@@ -7,20 +7,16 @@
     android:layout_height="match_parent"
     tools:context=".fragment.OverviewFragment">
 
-    <com.github.mikephil.charting.charts.BarChart
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="10dp"
-        android:id="@+id/barChart"
-        android:visibility="gone"
-        />
-    <com.github.mikephil.charting.charts.PieChart
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="10dp"
-        android:id="@+id/pieChart"
-        android:visibility="gone"
-        />
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/Linechart"
+        android:layout_width="322dp"
+        android:layout_height="381dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/analysisbox"

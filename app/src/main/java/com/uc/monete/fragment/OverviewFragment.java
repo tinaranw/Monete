@@ -1,6 +1,5 @@
 package com.uc.monete.fragment;
 
-import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -15,21 +14,23 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.github.mikephil.charting.utils.ColorTemplate;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.uc.monete.R;
-import com.uc.monete.activities.ApiClient;
-import com.uc.monete.activities.ApiInterface;
-import com.uc.monete.activities.Growth;
 import com.uc.monete.model.History;
 
 import org.json.JSONObject;
@@ -47,8 +48,9 @@ import retrofit2.Response;
 public class OverviewFragment extends Fragment {
     Toolbar toolbar;
     TextView incomeText, expenseText, highexText, lowexText, totalbalanceText;
-    private BarChart mBarChart;
-    private PieChart mPieChart;
+
+    private static final String TAG = "fragment_overview";
+    private LineChart mChart;
 
     public OverviewFragment() {
         // Required empty public constructor
@@ -57,8 +59,40 @@ public class OverviewFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.fragment_overview);
+
+        mChart = (LineChart) findViewById(R.id.Linechart);
+
+//        mChart.setOnChartGestureListener(MainActivity.this);
+//        mChart.setOnChartValueSelectedListener(MainActivity.this);
+
+        mChart.setDragEnabled(true);
+        mChart.setScaleEnabled(false);
+
+        ArrayList<Entry> yValues = new ArrayList<>();
+
+        yValues.add(new Entry(0,60f));
+        yValues.add(new Entry(1,50f));
+        yValues.add(new Entry(2,70f));
+        yValues.add(new Entry(3,30f));
+        yValues.add(new Entry(4,50f));
+        yValues.add(new Entry(5,60f));
+        yValues.add(new Entry(6,75f));
+
+
+        LineDataSet set1 = new LineDataSet(yValues,"Data Set 1");
+
+        set1.setFillAlpha(110);
+
+        ArrayList<ILineDataSet> dataSets = new ArrayList<>();
+        dataSets.add(set1);
+
+        LineData data = new LineData(dataSets);
+
+        mChart.setData(data);
 
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -66,69 +100,7 @@ public class OverviewFragment extends Fragment {
         // Inflate the layout for this fragment
         toolbar = getActivity().findViewById(R.id.toolbar_main);
         toolbar.setTitle("Overview");
-//        return inflater.inflate(R.layout.fragment_overview, container, false);
-
-        View view = inflater.inflate(R.layout.fragment_overview,container,false);
-        mBarChart = view.findViewById(R.id.barChart);
-        mPieChart = view.findViewById(R.id.pieChart);
-        getGrowthChart(getArguments().getString("method"));
-        return view;
-    }
-
-    private void getGrowthChart(String method){
-
-        Call<List<Growth>> call = ApiClient.getApiClient().create(ApiInterface.class).getGrowthInfo();
-
-        call.enqueue(new Callback<List<Growth>>(){
-
-            @Override
-            public void onResponsse(Call<List<Growth>> call, Response<List<Growth>> response){
-                if (response.body() != null){
-                    if(method.equals("bars")){
-                        List<BarEntry>barEntries = new ArrayList<>();
-                        for(Growth growth : response.body()){
-                            BarEntries.add(new BarEntry(growth.getYear(),growth.getGrowth_Rate()));
-                        }
-                        BarDataSet barDataSet = new BarDataSet(barEntries,"Growth");
-                        barDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
-
-                        BarData barData = new BarData(barDataSet);
-                        barData.setBarWidth(0.9f);
-
-                        mBarChart.setVisibility(View.VISIBLE);
-                        mBarChart.animateY(5000);
-                        mBarChart.setData(barData);
-                        mBarChart.setFitBars(true);
-
-                        Description description = new Description();
-                        description.setText("Growth Rate Per Year");
-                        mBarChart.setDescription(description);
-                        mBarChart.invalidate();
-                    }
-                    else if(method.equals("pie")){
-
-                        List<PieEntry> pieEntries = new ArrayList<>();
-                        for (Growth growth : response.body()){
-                            pieEntries.add(new PieEntry(growth.getGrowth()_Rate(),Integer.toString(growth.getYear())));
-                        }
-
-                        mPieChart.setVisibility(View.VISIBLE);
-                        mPieChart.animateXY(5000,5000);
-
-                        PieDataSet pieDataSet = new PieDataSet(pieEntries,"Growth per year");
-                        pieDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
-
-                        PieData pieData = new PieData(pieDataSet);
-
-                        mPieChart.setData(pieData);
-                         Description description = new
-                }
-            }
-            @Override
-            public void onFailure(Call<List<Growth>> call, Throwable t){
-
-            }
-        });
+        return inflater.inflate(R.layout.fragment_overview, container, false);
     }
 
     @Override
