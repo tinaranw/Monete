@@ -142,6 +142,8 @@ public class OverviewFragment extends Fragment {
         totalbalanceText = view.findViewById(R.id.totalexpensebal);
 
         getOverview();
+        getMaxExpense();
+        getMinExpense();
     }
 
     private void getOverview(){
@@ -161,6 +163,58 @@ public class OverviewFragment extends Fragment {
                     incomeText.setText(income);
                     expenseText.setText(expense);
                     totalbalanceText.setText(curbalancetext);
+                } catch (Exception e) {
+                    Log.d("ExceptionHistory", "onSuccess: " + e.getMessage());
+
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                Log.d("onFailureHistory", "onFailure: " + error.getMessage());
+            }
+        });
+
+    }
+    private void getMaxExpense(){
+        final ArrayList<History> histories = new ArrayList<>();
+        AsyncHttpClient client = new AsyncHttpClient();
+        String url = "http://iamtinara.com/api/maxexpense.php";
+
+        client.get(url, new AsyncHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                try {
+                    String result = new String(responseBody);
+                    JSONObject responseObject = new JSONObject(result);
+                    String max = responseObject.getString("max");
+                    highexText.setText(max);
+                } catch (Exception e) {
+                    Log.d("ExceptionHistory", "onSuccess: " + e.getMessage());
+
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                Log.d("onFailureHistory", "onFailure: " + error.getMessage());
+            }
+        });
+
+    }
+    private void getMinExpense(){
+        final ArrayList<History> histories = new ArrayList<>();
+        AsyncHttpClient client = new AsyncHttpClient();
+        String url = "http://iamtinara.com/api/minexpense.php";
+
+        client.get(url, new AsyncHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                try {
+                    String result = new String(responseBody);
+                    JSONObject responseObject = new JSONObject(result);
+                    String min = responseObject.getString("min");
+                    lowexText.setText(min);
                 } catch (Exception e) {
                     Log.d("ExceptionHistory", "onSuccess: " + e.getMessage());
 
