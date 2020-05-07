@@ -55,17 +55,7 @@ public class BackgroundWorker extends AsyncTask<String, Void, String> {
                 bufferedWriter.flush();
                 bufferedWriter.close();
                 outputStream.close();
-                InputStream inputStream = httpURLConnection.getInputStream();
-                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream,"iso-8859-1"));
-                String result="";
-                String line="";
-                while((line = bufferedReader.readLine())!=null){
-                    result += line;
-                }
-                bufferedReader.close();
-                inputStream.close();
-                httpURLConnection.disconnect();
-                return result;
+
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             } catch (IOException e) {

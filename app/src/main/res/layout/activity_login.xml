@@ -86,10 +86,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:background="@drawable/nobgbutton"
         android:text="@string/forgotpassword"
         android:textAllCaps="false"
         android:textColor="#51331F"
         app:layout_constraintStart_toStartOf="@+id/editTxtPassword"
         app:layout_constraintTop_toBottomOf="@+id/editTxtPassword" />
+
+    <TextView
+        android:id="@+id/loginstatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:textColor="#F44336"
+        app:layout_constraintEnd_toEndOf="@+id/editTxtPassword"
+        app:layout_constraintStart_toStartOf="@+id/editTxtPassword"
+        app:layout_constraintTop_toBottomOf="@+id/btnSignup" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

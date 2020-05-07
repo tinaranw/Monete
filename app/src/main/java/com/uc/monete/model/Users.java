@@ -11,11 +11,12 @@ public class Users implements Parcelable {
     private String balance;
     private String coins;
     private String themes;
+    private String limit;
 
     public Users() {
     }
 
-    public Users(String id, String name, String email, String password, String balance, String coins, String themes) {
+    public Users(String id, String name, String email, String password, String balance, String coins, String themes, String limit) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -23,6 +24,7 @@ public class Users implements Parcelable {
         this.balance = balance;
         this.coins = coins;
         this.themes = themes;
+        this.limit = limit;
     }
 
     protected Users(Parcel in) {
@@ -33,6 +35,7 @@ public class Users implements Parcelable {
         balance = in.readString();
         coins = in.readString();
         themes = in.readString();
+        limit = in.readString();
     }
 
     public static final Creator<Users> CREATOR = new Creator<Users>() {
@@ -103,6 +106,14 @@ public class Users implements Parcelable {
         this.themes = themes;
     }
 
+    public String getLimit() {
+        return limit;
+    }
+
+    public void setLimit(String limit) {
+        this.limit = limit;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -117,5 +128,6 @@ public class Users implements Parcelable {
         dest.writeString(balance);
         dest.writeString(coins);
         dest.writeString(themes);
+        dest.writeString(limit);
     }
 }

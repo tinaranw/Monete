@@ -19,6 +19,7 @@ import android.view.ViewGroup;
 
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
 import com.uc.monete.R;
 
 import org.json.JSONArray;
@@ -64,9 +65,11 @@ public class HistoryFragment extends Fragment {
     private void getHistory() {
         final ArrayList<History> histories = new ArrayList<>();
         AsyncHttpClient client = new AsyncHttpClient();
+        RequestParams params = new RequestParams();
+        params.put("email", "tinaranathania@gmail.com");
         String url = "http://iamtinara.com/api/list.php";
 
-        client.get(url, new AsyncHttpResponseHandler() {
+        client.post(url,params, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 try {
