@@ -43,17 +43,15 @@ public class LoginActivity extends AppCompatActivity {
 
         login = findViewById(R.id.btnLogin);
 
-        email = email_edit.getText().toString().trim();
-        password = password_edit.getText().toString().trim();
+
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(LoginActivity.this,email, Toast.LENGTH_SHORT).show();
-//                loginChecking(email, password);
+                email = email_edit.getText().toString().trim();
+                password = password_edit.getText().toString().trim();
+                loginChecking(email, password);
 
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(intent);
 
             }
         });
@@ -77,14 +75,14 @@ public class LoginActivity extends AppCompatActivity {
                     JSONObject responseObject = new JSONObject(result);
                     String login_status = responseObject.getString("login_status");
                     if (login_status.equalsIgnoreCase("logged_in")) {
-//                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-//                        startActivity(intent);
+                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                        startActivity(intent);
                     } else {
 
                         Log.d("loginstat", login_status);
                         loginStatus.setText("Wrong email or password! Try again!!!");
-                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                        startActivity(intent);
+//                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+//                        startActivity(intent);
 
                     }
                 } catch (Exception e) {

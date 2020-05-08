@@ -17,6 +17,7 @@ import android.widget.Button;
 import com.uc.monete.R;
 import com.uc.monete.activities.LoginActivity;
 import com.uc.monete.activities.MainActivity;
+import com.uc.monete.layouts.LandingPageActivity;
 
 
 public class SettingsFragment extends Fragment {
@@ -55,7 +56,7 @@ public class SettingsFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getActivity(), LoginActivity.class);
+                Intent intent = new Intent(getActivity(), LandingPageActivity.class);
                 startActivity(intent);
             }
         });

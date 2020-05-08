@@ -6,19 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".activities.LoginActivity">
 
-    <EditText
-        android:id="@+id/editTxtEmail"
-        android:layout_width="280dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:background="@drawable/inputbox"
-        android:ems="10"
-        android:hint="@string/loginEmail"
-        android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/MoneteLogo" />
-
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="88dp"
@@ -28,7 +15,7 @@
         android:text="@string/btnlogin"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="@+id/editTxtPassword"
+        app:layout_constraintEnd_toEndOf="@+id/editTxtEmail"
         app:layout_constraintTop_toBottomOf="@+id/btnForgotPassword" />
 
     <Button
@@ -47,27 +34,12 @@
     <ImageView
         android:id="@+id/MoneteLogo"
         android:layout_width="0dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="64dp"
+        android:layout_height="182dp"
+        android:layout_marginTop="96dp"
         android:src="@drawable/moneteicon2"
         app:layout_constraintEnd_toEndOf="@+id/editTxtEmail"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/editTxtEmail"
         app:layout_constraintTop_toBottomOf="@+id/toolbarLogin" />
-
-    <EditText
-        android:id="@+id/editTxtPassword"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/inputbox"
-        android:ems="10"
-        android:hint="@string/loginPassword"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="@+id/editTxtEmail"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTxtEmail"
-        app:layout_constraintTop_toBottomOf="@+id/editTxtEmail" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarLogin"
@@ -85,7 +57,7 @@
         android:id="@+id/btnForgotPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/nobgbutton"
         android:text="@string/forgotpassword"
         android:textAllCaps="false"
@@ -102,5 +74,31 @@
         app:layout_constraintEnd_toEndOf="@+id/editTxtPassword"
         app:layout_constraintStart_toStartOf="@+id/editTxtPassword"
         app:layout_constraintTop_toBottomOf="@+id/btnSignup" />
+
+    <EditText
+        android:id="@+id/editTxtPassword"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/inputbox"
+        android:ems="10"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/editTxtEmail"
+        app:layout_constraintStart_toStartOf="@+id/editTxtEmail"
+        app:layout_constraintTop_toBottomOf="@+id/editTxtEmail" />
+
+    <EditText
+        android:id="@+id/editTxtEmail"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="64dp"
+        android:background="@drawable/inputbox"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/MoneteLogo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -176,10 +176,10 @@ public class AddRecordFragment extends Fragment implements TextWatcher, AdapterV
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
 
-                //untuk loading
-                Intent intent = new Intent(AddRecordFragment.this, HistoryFragment.class);
-                intent.putExtra(MainActivity.FRAGMENT_TO_LOAD, "Quiz");
-                startActivity(intent);
+//                //untuk loading
+//                Intent intent = new Intent(AddRecordFragment.this, HistoryFragment.class);
+//                intent.putExtra(MainActivity.FRAGMENT_TO_LOAD, "Quiz");
+//                startActivity(intent);
             }
         });
 

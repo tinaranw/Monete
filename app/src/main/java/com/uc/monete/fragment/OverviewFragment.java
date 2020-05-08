@@ -199,7 +199,7 @@ public class OverviewFragment extends Fragment {
                     PieData pieData = new PieData(pieDataSet);
                     mChart.setData(pieData);
 
-                    pieDataSet.setColors(ColorTemplate.JOYFUL_COLORS);
+                    pieDataSet.setColors(ColorTemplate.PASTEL_COLORS);
                 } catch (Exception e) {
                     Log.d("ExceptionHistory", "onSuccess: " + e.getMessage());
 

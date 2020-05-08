@@ -88,12 +88,12 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
         bottomNavigationView.setSelectedItemId(R.id.menu_home);
 
-        if(Objects.equals(getIntent().getStringExtra(FRAGMENT_TO_LOAD), "Quiz")){
-            navigation.setSelectedItemId(R.id.fr_addrecord);
-        }else{
-            navigation.setSelectedItemId(R.id.);
-
-        }
+//        if(Objects.equals(getIntent().getStringExtra(FRAGMENT_TO_LOAD), "Quiz")){
+//            navigation.setSelectedItemId(R.id.fr_addrecord);
+//        }else{
+//            navigation.setSelectedItemId(R.id.cons_fr_history);
+//
+//        }
 }
 
 
