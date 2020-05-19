@@ -22,6 +22,7 @@ import com.uc.monete.layouts.LandingPageActivity;
 
 public class SettingsFragment extends Fragment {
     Button signout;
+    Button editProfile;
 
 
     public SettingsFragment() {
@@ -32,10 +33,6 @@ public class SettingsFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
-
-
 
     }
 

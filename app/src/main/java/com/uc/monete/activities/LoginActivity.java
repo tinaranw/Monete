@@ -43,8 +43,6 @@ public class LoginActivity extends AppCompatActivity {
 
         login = findViewById(R.id.btnLogin);
 
-
-
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,7 +81,6 @@ public class LoginActivity extends AppCompatActivity {
                         loginStatus.setText("Wrong email or password! Try again!!!");
 //                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
 //                        startActivity(intent);
-
                     }
                 } catch (Exception e) {
                     Log.d("ExceptionHistory", "onSuccess: " + e.getMessage());
